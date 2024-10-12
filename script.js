@@ -32,31 +32,3 @@ window.addEventListener('load', function() {
     }, 1500); 
 });
 
-// Age Calculation in Decimal
-function calculateAge() {
-    const birthDate = new Date('2000-01-01'); // Replace with your birth date
-    const today = new Date();
-    
-    // Calculate age in years and months
-    const ageInYears = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    
-    // Adjust for months and calculate decimal age
-    const ageDecimal = monthDiff < 0 
-        ? ageInYears - 1 + (monthDiff + 12) / 12
-        : ageInYears + monthDiff / 12;
-
-    // Return the age with 10 decimal places
-    return ageDecimal.toFixed(10);
-}
-
-function updateAgeDisplay() {
-    const ageDisplay = document.getElementById('age-display');
-    ageDisplay.textContent = calculateAge(); // Update age display
-
-    // Use requestAnimationFrame for smooth continuous updating
-    requestAnimationFrame(updateAgeDisplay);
-}
-
-// Start updating the age display immediately on page load
-updateAgeDisplay();
