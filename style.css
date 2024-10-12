@@ -120,7 +120,7 @@ nav ul li a::after{
     background: #3a3a3a;
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -3px;
     transition: 0.5s;
 }
 
@@ -136,6 +136,10 @@ nav ul li a:hover::after{
 
 .header-text p{ 
     font-size: 30px;
+    
+}
+.header-text p1{ 
+    font-size: 20px;
     
 }
 
@@ -208,7 +212,7 @@ nav ul li a:hover::after{
     position: absolute; 
     left: 50%; 
     bottom: -2px; 
-    transition: width 0.5s ease, left 0.5s ease; 
+    transition: 0.5s ease;
     transform: translateX(-50%); 
 }
 
