@@ -27,7 +27,7 @@ function updateAgeDisplay() {
 }
 
 // Update the age display every second
-setInterval(updateAgeDisplay, 1000);
+setInterval(updateAgeDisplay, 50);
 
 // Call updateAgeDisplay once immediately
 updateAgeDisplay();
