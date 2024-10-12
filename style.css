@@ -9,23 +9,39 @@ body{
     background: #e2e2e2;
     color: rgb(0, 0, 0);
     display: flex;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #header {
     width: 50%; 
     color: rgb(0, 0, 0);
-    padding: 96px;
+    
+    padding: 96px 0;
+    padding-left: 100px;
+    padding-right: 10px;
+    margin-left: 200px;
     box-sizing: border-box;
+    height: 100vh;
 }
 
 #main-content {
     width: 50%; 
-    padding: 96px;
+    padding: 96px 0px;
+    padding-right: 100px;
+    padding-left: 10px;
+    margin-right: 200px;
     box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#main-content::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar in WebKit browsers */
 }
 
 .container{
-    padding: 30px 20%;
+    
 }
 
 nav{
@@ -78,7 +94,7 @@ nav ul li a:hover::after{
 
 /* about */
 #about{
-    padding: 80px 0;
+    margin-top: 20px;
     color: rgb(0, 0, 0);
 }
 
