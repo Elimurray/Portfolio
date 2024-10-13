@@ -361,7 +361,7 @@ nav ul li a.active::after {
 
 .project {
     display: flex;
-    align-items: flex-start; /* Align content to the top */
+    align-items: flex-start; 
     justify-content: space-between;
     border: 2px solid transparent;
     background-color: var(--background-color);
@@ -372,7 +372,7 @@ nav ul li a.active::after {
 .project-info {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Stack title, description, and languages */
+    flex-direction: column; 
 }
 
 .project-title {
