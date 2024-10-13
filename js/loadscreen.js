@@ -22,31 +22,35 @@ let anim = [
     { t: "Eli Murray Portfolio", ms: 150 },
     { t: "Eli Murray Portfolio", ms: 300 }
 ];
-let stepDenominator = 1;
-if (window.localStorage.stepDenominator)
-    stepDenominator = window.localStorage.stepDenominator;
+
 let i = 0;
+let underscoreVisible = true; // Flag to track visibility of underscore
+let underscoreToggle; // Variable to hold the interval ID
+
 let update = () => {
     let step = anim[i];
-    header.innerText = step.t;
+    header.innerHTML = `${step.t}<span style="color: purple;">${underscoreVisible ? '_' : '&nbsp;'}</span>`; // Show or hide underscore
     i++;
 
-    if (i < anim.length)
-        setTimeout(update, step.ms / stepDenominator);
-    else {
+    if (i < anim.length) {
+        setTimeout(update, step.ms);
+    } else {
         // Fade out the loading screen after the text is displayed
         setTimeout(() => {
+            clearInterval(underscoreToggle); // Stop toggling underscore
             document.getElementById('loading-screen').style.animation = 'fadeOut 1s forwards';
             document.getElementById('main-content').style.opacity = 1;
 
-            // After the fade-out animation completes, hide the loading screen
             setTimeout(() => {
                 document.getElementById('loading-screen').style.display = 'none';
-            }, 1000); // Wait for the fadeOut animation to complete (1 second)
-            
+            }, 1000);
         }, 500);
-
-        window.localStorage.stepDenominator = 2; // Adjust the speed for the next time the user visits
     }
 };
+
+// Toggle underscore visibility
+underscoreToggle = setInterval(() => {
+    underscoreVisible = !underscoreVisible;
+}, 500);
+
 update();

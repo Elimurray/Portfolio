@@ -68,6 +68,17 @@
     text-align: center;
 }
 
+
+
+.underscore {
+    display: inline-block;
+    width: 10px; 
+    height: 2px; 
+    background-color: purple; 
+    margin-right: 5px; 
+}
+
+
 body{
     background: #e2e2e2;
     color: rgb(0, 0, 0);
