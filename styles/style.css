@@ -169,7 +169,7 @@ nav ul li a.active::after {
     
     font-size: 30px;
     user-select: none;
-
+    
     
 }
 
@@ -341,8 +341,127 @@ nav ul li a.active::after {
 
 
 /* Projects */
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.project {
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    justify-content: space-between;
+    border: 2px solid transparent;
+    background-color: var(--background-color);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack title, description, and languages */
+}
+
+.project-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.project-description {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.project-image img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    
+}
+
+.project:hover {
+    background-color: #c4c4c4;
+    border-color: var(--hover-color);
+}
+
+.project:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project:hover .project-title {
+    color: var(--hover-color);
+}
+
+
+
+.languages {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.language-bubble {
+    background-color: var(--hover-color); /* Purple bubble */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
 
 /* Experience */
+#experience {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    background-color: var(--background-color);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.experience-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.experience-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.experience-description {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.experience-date {
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.experience-item:hover {
+    background-color: #c4c4c4;
+    border-color: var(--hover-color);
+}
+
+.experience-item:hover .experience-title {
+    color: var(--hover-color);
+}
 
 #resume{
     margin-top: 10px;
