@@ -236,16 +236,26 @@ nav ul li a.active::after {
         display: none;
     }
 
-    #header, #main-content {
+    #header {
         width: 100%; /* Full width */
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 50px;
         padding-bottom: 5px;
+        
+    }
+
+    #main-content {
+        width: 100%; /* Full width */
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 5px;
     }
 
     #header {
-        height: auto;
+        height: 260px;
+        position: relative;
     }
 
     .spacer {
@@ -253,7 +263,7 @@ nav ul li a.active::after {
     }
     .social-icons {
         justify-content: left;
-        margin-top: 50px;
+        margin-top: 10px;
     }
 
     nav ul li {
@@ -275,6 +285,12 @@ nav ul li a.active::after {
         padding: 20px; /* Less padding on small screens */
     }
 
+    #header {
+        height: 210px;
+        
+    }
+    
+
     .header-text h1 {
         font-size: 32px;
     }
@@ -289,7 +305,7 @@ nav ul li a.active::after {
 
     .social-icons {
         justify-content: left;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 }
 
