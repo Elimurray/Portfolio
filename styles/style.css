@@ -265,16 +265,15 @@ nav ul li a.active::after {
 }
 
 #lanuages a {
-    color: rgb(0, 0, 0); /* Default color */
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Same size as the nav links */
-    
-    font-weight: bold; /* Make the text bold on hover */
+    color: rgb(0, 0, 0); 
+    text-decoration: none; 
+    font-size: 18px; 
+    font-weight: bold; 
 }
 
 #lanuages a:hover,
 #lanuages a.active {
-    color: #3a3a3a; /* Change to a different color on hover */
+    color: #3a3a3a; 
     
 }
 
