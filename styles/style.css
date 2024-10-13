@@ -259,10 +259,26 @@ nav ul li a.active::after {
      
 }
 .sub-title{
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 600;
     color: #000000;
 }
+
+#lanuages a {
+    color: rgb(0, 0, 0); /* Default color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Same size as the nav links */
+    
+    font-weight: bold; /* Make the text bold on hover */
+}
+
+#lanuages a:hover,
+#lanuages a.active {
+    color: #3a3a3a; /* Change to a different color on hover */
+    
+}
+
+
 
 /* Projects */
 
