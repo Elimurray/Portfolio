@@ -10,17 +10,8 @@ let anim = [
     { t: "Eli Murr", ms: 150 },
     { t: "Eli Murra", ms: 150 },
     { t: "Eli Murray", ms: 150 },
-    { t: "Eli Murray ", ms: 200 },
-    { t: "Eli Murray P", ms: 150 },
-    { t: "Eli Murray Po", ms: 150 },
-    { t: "Eli Murray Por", ms: 150 },
-    { t: "Eli Murray Port", ms: 150 },
-    { t: "Eli Murray Portf", ms: 150 },
-    { t: "Eli Murray Portfo", ms: 150 },
-    { t: "Eli Murray Portfol", ms: 150 },
-    { t: "Eli Murray Portfoli", ms: 150 },
-    { t: "Eli Murray Portfolio", ms: 150 },
-    { t: "Eli Murray Portfolio", ms: 300 }
+    { t: "Eli Murray", ms: 200 },
+
 ];
 
 let i = 0;
