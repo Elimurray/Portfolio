@@ -1,3 +1,26 @@
+:root {
+    /* Color Palette */
+    --primary-color: #000000; 
+    --secondary-color: #3a3a3a; 
+    --accent-color: #FF6F61; 
+    --background-color: #e2e2e2; 
+    --text-color: #000000; 
+    --hover-color: #6d00c7; 
+    --border-color: #cccccc; 
+
+    /* Fonts */
+    --main-font: 'Roboto Mono', monospace; 
+    --heading-font-size: 60px; 
+    --subheading-font-size: 40px; 
+    --body-font-size: 18px; 
+
+    --dark-background-color: #121212; 
+    --dark-text-color: #e6dfdf; 
+    --dark-hover-color: #6d00c7; 
+    
+    
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -52,7 +75,7 @@ body{
     flex-direction: row;
     height: 100vh;
     overflow: hidden;
-   
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -61,7 +84,7 @@ body{
     color: rgb(0, 0, 0);
     
     padding: 96px 0;
-    padding-left: 20%; 
+    padding-left: 25%; 
     padding-right: 2%;
     
     box-sizing: border-box;
@@ -75,7 +98,7 @@ body{
     width: 50%; 
     padding: 96px 0px;
     padding-left: 2%; 
-    padding-right: 20%;
+    padding-right: 25%;
     
     box-sizing: border-box;
     height: 100vh;
@@ -110,13 +133,19 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     position: relative;
+    display: inline-block;
+    transition: transform 0.8s ease; 
+}
+
+nav ul li a:hover{
+    transform: scale(1.2);
 }
 
 nav ul li a::after {
     content: '';
     width: 0%;
     height: 3px;
-    background: #3a3a3a;
+    background: var(--hover-color);
     position: absolute;
     left: 0;
     bottom: -3px;
@@ -126,12 +155,17 @@ nav ul li a::after {
 nav ul li a:hover::after,
 nav ul li a.active::after {
     width: 100%;
+    
 }
+
+
 
 
 .header-text{
     
     font-size: 30px;
+    user-select: none;
+
     
 }
 
@@ -144,12 +178,15 @@ nav ul li a.active::after {
     font-size: 18px;
 }
 
-.header-text h1{
+.header-text h1 {
     font-size: 60px;
     margin-top: 20px;
 }
+
+
+
 .spacer {
-    height: 200px; /* Adjust this value for desired space */
+    height: 250px; 
 }
 /* social icons */
 .social-icons {
@@ -176,10 +213,12 @@ nav ul li a.active::after {
     margin-right: 20px;
     text-decoration: none;
     transition: color 0.3s;
+    transition: transform 0.5s ease;
 }
 
 .social-icons a:hover {
-    color: #3a3a3a;
+    color: var(--hover-color);
+    transform: scale(1.3);
 }
 
 /* Responsive Styling: Flexbox Adjustments */
@@ -269,12 +308,13 @@ nav ul li a.active::after {
     text-decoration: none; 
     font-size: 18px; 
     font-weight: bold; 
+    display: inline-block; 
+    transition: transform 0.3s ease;
 }
 
-#lanuages a:hover,
-#lanuages a.active {
-    color: #3a3a3a; 
-    
+#lanuages a:hover {
+    color: var(--hover-color); 
+    transform: scale(1.1);
 }
 
 
@@ -317,3 +357,50 @@ nav ul li a.active::after {
     left: 50%; 
 }
 
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000; 
+}
+
+#dark-mode-toggle i {
+    transition: transform 0.3s ease; 
+}
+
+#dark-mode-toggle i:hover {
+    transform: scale(1.2); 
+}
+
+.dark-mode {
+    background-color: var(--dark-background-color); 
+    color: var(--dark-text-color); 
+}
+
+.dark-mode nav ul li a {
+    color: var(--dark-text-color); 
+}
+.dark-mode nav ul li a::after, .dark-mode a::after{
+    background: var(--dark-hover-color);
+    
+}
+
+
+.dark-mode #lanuages a:hover, .dark-mode .social-icons a:hover {
+    color: var(--dark-hover-color);
+}
+
+
+.dark-mode #main-content, .dark-mode #about, .dark-mode #projects, 
+.dark-mode #experience, .dark-mode .sub-title, .dark-mode .header-text,
+.dark-mode #lanuages a, .dark-mode #resume, .dark-mode #resume a,
+.dark-mode .social-icons a{
+    color: var(--dark-text-color);
+}
+
+
+.dark-mode i#mode-icon {
+    color: var(--background-color); 
+}
