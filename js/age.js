@@ -18,7 +18,7 @@ function calculateAge() {
     const ageInDays = (today - birthDate) / (1000 * 60 * 60 * 24 * 365.25); // Divide by 365.25 for leap years
 
     // Return the age with 10 decimal places
-    return ageInDays.toFixed(10);
+    return ageInDays.toFixed(9);
 }
 
 function updateAgeDisplay() {
