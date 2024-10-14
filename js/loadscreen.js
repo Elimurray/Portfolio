@@ -28,7 +28,7 @@ let update = () => {
     } else {
         // Fade out the loading screen after the text is displayed
         setTimeout(() => {
-            clearInterval(underscoreToggle); // Stop toggling underscore
+            
             document.getElementById('loading-screen').style.animation = 'fadeOut 1s forwards';
             document.getElementById('main-content').style.opacity = 1;
 
@@ -39,9 +39,6 @@ let update = () => {
     }
 };
 
-// Toggle underscore visibility
-underscoreToggle = setInterval(() => {
-    underscoreVisible = !underscoreVisible;
-}, 500);
+
 
 update();
