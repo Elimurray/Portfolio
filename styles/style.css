@@ -3,7 +3,7 @@
   --primary-color: #000000;
   --secondary-color: #3a3a3a;
   --accent-color: #ff6f61;
-  --background-color: #e2e2e2;
+  --background-color: #fafafa;
   --text-color: #000000;
   --hover-color: #8639c5;
   --border-color: #cccccc;
@@ -52,7 +52,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #e2e2e2;
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@
 }
 
 body {
-  background: #e2e2e2;
+  background: #fafafa;
   color: rgb(0, 0, 0);
   display: flex;
   flex-direction: row;
@@ -107,15 +107,7 @@ body {
 
   box-sizing: border-box;
   height: 100vh;
-  overflow-y: auto;
-}
-
-#main-content::-webkit-scrollbar {
-  display: none;
-  /* Hide the scrollbar in WebKit browsers */
-}
-
-.container {
+  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
 }
 
 nav {
@@ -382,7 +374,6 @@ nav ul li a.active::after {
 .project:hover {
   transform: scale(1.03); /* Slightly enlarges the project container */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow for lifted effect */
-  border-color: var(--hover-color);
 }
 
 .project:hover .project-image img {
@@ -416,12 +407,20 @@ nav ul li a.active::after {
   margin-top: 5px;
 }
 
-.experience-item {
+.experience-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
+}
+
+.experience-item {
+  display: flex;
+  flex-direction: column; /* Changed to column to stack header and description */
   border: 2px solid transparent;
-  background-color: var(--background-color);
+  background-color: var(
+    --background-color,
+    #e8f0fe
+  ); /* Fallback to Google-inspired light blue */
   border-radius: 7px;
   padding: 15px; /* Increased padding for better spacing */
   transition: transform 0.3s ease, box-shadow 0.3s ease,
@@ -429,34 +428,33 @@ nav ul li a.active::after {
 }
 
 .experience-info {
-  flex: 1;
-  margin-right: 20px;
+  margin-top: 10px; /* Adds spacing between header and description */
 }
 
 .experience-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: var(--text-color);
+  font-size: 21px;
+  margin: 0; /* Adjusted to remove unnecessary margin */
+  color: var(--text-color, #333333); /* Fallback for readability */
 }
 
 .experience-description {
   font-size: 14px;
-  color: var(--text-color);
+  color: var(--text-color, #333333); /* Fallback for readability */
 }
 
 .experience-date {
-  font-size: 18px;
-  color: var(--primary-color);
+  font-size: 16px;
+  color: var(--primary-color, #4285f4); /* Google blue as fallback */
+  white-space: nowrap; /* Prevents date from wrapping */
 }
 
 .experience-item:hover {
   transform: scale(1.03); /* Slightly enlarges the experience container */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow for lifted effect */
-  border-color: var(--hover-color);
 }
 
 .experience-item:hover .experience-title {
-  color: var(--hover-color);
+  color: var(--hover-color, #db4437); /* Google red for hover effect */
 }
 
 #resume {
