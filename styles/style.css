@@ -9,7 +9,7 @@
   --border-color: #cccccc;
 
   /* Fonts */
-  --main-font: "Roboto Mono", monospace;
+  --main-font: "Poppins", sans-serif;
   --heading-font-size: 60px;
   --subheading-font-size: 40px;
   --body-font-size: 18px;
@@ -22,7 +22,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
 
@@ -102,37 +102,57 @@
 body {
   background: #ffffff;
   color: rgb(0, 0, 0);
-  display: flex;
+  display: block; /* Remove flex row */
+  height: auto; /* Allow natural height */
+  overflow: visible; /* Remove hidden overflow */
   flex-direction: row;
-  height: 100vh;
-  overflow: hidden;
+
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: url("/images/cursor.png");
 }
 
-#header {
-  width: 50%;
-  color: rgb(0, 0, 0);
-
-  padding: 96px 0;
-  padding-left: 20%;
-
-  box-sizing: border-box;
-  height: 100vh;
+#sidebar {
+  position: fixed;
+  color: #000000; /* Black text for contrast */
+  top: 10%;
+  left: 20%;
+  border-radius: 15px;
+  width: 400px;
+  height: 70vh;
+  background: #f5f5f5; /* Soft Google grey */
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for pop */
+}
+
+#sidebar .container {
+  width: 100%; /* Ensure container spans sidebar width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all content horizontally */
+  text-align: center; /* Center text within elements */
+  height: 100%;
+}
+
+#sidebar nav {
+  margin-top: 40px; /* Space from header-text */
+}
+
+#sidebar .social-icons {
+  position: static; /* Remove fixed */
+  margin-top: auto; /* Push to bottom */
+  margin-bottom: 40px;
+  padding-left: 25px;
 }
 
 #main-content {
-  width: 50%;
-  padding: 96px 0px;
-  padding-left: 2%;
-  padding-right: 20%;
-
-  box-sizing: border-box;
-  height: 100vh;
-  overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+  margin-left: 45%;
+  margin-right: 10%;
+  width: 70vh;
+  padding: 60px 40px; /* More breathing room */
+  overflow-y: visible; /* No need for auto if body is auto */
 }
 
 nav {
@@ -325,14 +345,28 @@ nav ul li a.active::after {
   margin-top: 20px;
   color: rgb(0, 0, 0);
 }
+#about p {
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
 
-.row {
+.title-0 {
+  font-size: 80px;
+  padding-left: 15px;
+}
+.title-1 {
+  font-size: 80px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  color: var(--hover-color);
 }
 
 .sub-title {
-  font-size: 30px;
+  font-size: 60px;
   font-weight: 600;
   color: #000000;
+  padding-left: 15px;
+  padding-top: 30px;
 }
 
 #lanuages a {
@@ -346,7 +380,6 @@ nav ul li a.active::after {
 
 #lanuages a:hover {
   color: var(--hover-color);
-  transform: scale(1.1);
 }
 
 /* Projects */
@@ -387,18 +420,15 @@ nav ul li a.active::after {
 }
 
 .project-image img {
-  max-width: 250px;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease;
+  padding: 5px;
 }
 
 .project:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow for lifted effect */
-}
-
-.project:hover .project-image img {
-  transform: scale(1.05); /* Retains the image scaling effect */
 }
 
 .project:hover .project-title {
