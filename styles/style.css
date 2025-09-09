@@ -350,6 +350,8 @@ nav ul li a:hover::after,
   padding-left: 15px;
   padding-bottom: 10px;
   color: var(--hover-color);
+  -webkit-text-stroke: 1px var(--text-color);
+  color: transparent;
 }
 
 .sub-title {
@@ -388,7 +390,7 @@ nav ul li a:hover::after,
   border: 2px solid transparent;
   background-color: var(--background-color);
   border-radius: 7px;
-  padding: 15px; /* Increased padding for better spacing */
+  padding: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease,
     background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -404,6 +406,45 @@ nav ul li a:hover::after,
   margin-bottom: 10px;
   color: var(--text-color);
 }
+.project-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-arrow {
+  margin-left: 8px;
+  color: #000000;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.project-arrow:hover {
+  color: #8639c5;
+}
+
+.project-link:hover {
+  color: var(--hover-color);
+}
+
+.project:hover .project-arrow {
+  transform: translateX(5px);
+}
+
+.project:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project:hover .project-title {
+  color: var(--hover-color);
+}
 
 .project-description {
   font-size: 14px;
@@ -416,33 +457,20 @@ nav ul li a:hover::after,
   border-radius: 8px;
   transition: transform 0.3s ease;
   padding: 5px;
-}
-
-.project:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow for lifted effect */
-}
-
-.project:hover .project-title {
-  color: var(--hover-color);
-}
-
-.languages {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-  user-select: none;
+  padding-top: 20px;
 }
 
 .language-icon {
   height: 20px;
+  border-radius: 2px;
+  vertical-align: middle;
   padding-right: 4px;
 }
 
 .language-bubble {
   display: inline-flex;
   align-items: center;
-  padding: 5px;
+  padding: 2px 4px 2px 4px;
   border-radius: 4px;
   font-size: 20px;
   border: 1px solid #ccc;
@@ -452,6 +480,14 @@ nav ul li a:hover::after,
 .language-bubble:hover {
   background-color: rgb(236, 236, 236);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.languages {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  user-select: none;
 }
 
 /* Experience */
