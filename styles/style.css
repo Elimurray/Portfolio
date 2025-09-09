@@ -24,6 +24,7 @@
   padding: 0;
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
+  cursor: none;
 }
 
 body {
@@ -36,6 +37,28 @@ body {
 
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: url("/images/cursor.png");
+}
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.cursor--small {
+  width: 5px;
+  height: 5px;
+  left: -2.5px;
+  top: -2.5px;
+  border-radius: 50%;
+  z-index: 11000;
+  background: black;
+}
+
+.cursor--canvas {
+  width: 100vw;
+  height: 100vh;
+  z-index: 12000;
 }
 
 ::-webkit-scrollbar {
@@ -60,7 +83,7 @@ body {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(189, 189, 189, 0.8);
   border-radius: 25px;
   padding: 0 20px 0 20px;
   z-index: 1000;
@@ -93,6 +116,7 @@ body {
 
 #top-nav .nav-link:hover {
   color: #8639c5;
+  opacity: 0.6;
 }
 
 #top-nav.visible {
@@ -500,7 +524,9 @@ nav ul li a:hover::after,
 
 .experience-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
   gap: 20px;
 }
 
