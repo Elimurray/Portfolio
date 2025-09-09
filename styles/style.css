@@ -26,123 +26,120 @@
   box-sizing: border-box;
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes moveHeader {
-  from {
-    transform: translateY(-100%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-/* Target the entire scrollbar */
-::-webkit-scrollbar {
-  width: 8px; /* Adjust width as needed for a thin scrollbar */
-  height: 8px; /* For horizontal scrollbars */
-}
-
-/* Target the scrollbar track (the background) */
-::-webkit-scrollbar-track {
-  background: transparent; /* Make the track transparent or a very light color */
-}
-
-/* Target the scrollbar thumb (the draggable part) */
-::-webkit-scrollbar-thumb {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.2
-  ); /* Semi-transparent black for a subtle look */
-  border-radius: 4px; /* Rounded corners for the thumb */
-}
-
-/* Hover state for the thumb */
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.4); /* Darker on hover */
-}
-#loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  flex-direction: column;
-}
-
-.loader {
-  font-size: 24px;
-  color: #000;
-  text-align: center;
-}
-
-.underscore {
-  display: inline-block;
-  width: 10px;
-  height: 2px;
-  background-color: purple;
-  margin-right: 5px;
-}
-
 body {
   background: #ffffff;
   color: rgb(0, 0, 0);
-  display: block; /* Remove flex row */
-  height: auto; /* Allow natural height */
-  overflow: visible; /* Remove hidden overflow */
+  display: block;
+  height: auto;
+  overflow: visible;
   flex-direction: row;
 
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: url("/images/cursor.png");
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#top-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 25px;
+  padding: 0 20px 0 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out */
+}
+
+#top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 45px;
+}
+
+#top-nav li {
+  display: inline-block;
+}
+
+#top-nav .nav-link {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+#top-nav .nav-link:hover {
+  color: #8639c5;
+}
+
+#top-nav.visible {
+  opacity: 1;
+}
+
+#top-nav .nav-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 #sidebar {
   position: fixed;
-  color: #000000; /* Black text for contrast */
+  color: #000000;
   top: 10%;
   left: 20%;
   border-radius: 15px;
   width: 400px;
-  height: 70vh;
-  background: #f5f5f5; /* Soft Google grey */
+  height: 60vh;
+  background: #f5f5f5;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for pop */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #sidebar .container {
-  width: 100%; /* Ensure container spans sidebar width */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center all content horizontally */
-  text-align: center; /* Center text within elements */
+  align-items: center;
+  text-align: center;
   height: 100%;
 }
 
+.header-image img {
+  height: 250px;
+}
+
 #sidebar nav {
-  margin-top: 40px; /* Space from header-text */
+  margin-top: 40px;
 }
 
 #sidebar .social-icons {
-  position: static; /* Remove fixed */
-  margin-top: auto; /* Push to bottom */
+  position: static;
+  margin-top: auto;
   margin-bottom: 40px;
   padding-left: 25px;
 }
@@ -151,8 +148,8 @@ body {
   margin-left: 45%;
   margin-right: 10%;
   width: 70vh;
-  padding: 60px 40px; /* More breathing room */
-  overflow-y: visible; /* No need for auto if body is auto */
+  padding: 80px 40px;
+  overflow-y: visible;
 }
 
 nav {
@@ -196,10 +193,6 @@ nav ul li a::after {
 }
 
 nav ul li a:hover::after,
-nav ul li a.active::after {
-  width: 100%;
-}
-
 .header-text {
   font-size: 30px;
   user-select: none;
@@ -224,7 +217,6 @@ nav ul li a.active::after {
   height: 250px;
 }
 
-/* social icons */
 .social-icons {
   display: flex;
   justify-content: flex-start;
@@ -232,11 +224,9 @@ nav ul li a.active::after {
   margin-top: 10px;
   position: fixed;
   transition: transform 0.5s ease;
-  /* Add transition for smooth scaling */
 }
 
 .social-icons.scale-up {
-  /* Scale up to 120% */
 }
 
 .social-icons a {

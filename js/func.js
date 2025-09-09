@@ -32,9 +32,20 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.8 }
+  { threshold: 0.6 }
 ); // Adjust threshold as needed
 
 sections.forEach((section) => {
   observer.observe(section);
+});
+
+document.addEventListener("mousemove", (event) => {
+  const nav = document.getElementById("top-nav");
+  const triggerZone = 300; // Pixels from top to trigger visibility
+
+  if (event.clientY <= triggerZone) {
+    nav.classList.add("visible");
+  } else {
+    nav.classList.remove("visible");
+  }
 });
