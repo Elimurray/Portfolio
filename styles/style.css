@@ -585,7 +585,7 @@ nav ul li a:hover::after,
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 500px) {
   .title-0 {
     font-size: 60px;
   }
