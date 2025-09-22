@@ -544,6 +544,9 @@ nav ul li a:hover::after,
 }
 
 @media (max-width: 980px) {
+  * {
+    cursor: auto;
+  }
   #sidebar {
     display: none;
   }
@@ -568,5 +571,25 @@ nav ul li a:hover::after,
   }
   #top-nav {
     display: none;
+  }
+
+  .cursor--small {
+    display: none;
+  }
+
+  .cursor--canvas {
+    display: none;
+  }
+  .cursor {
+    position: relative;
+  }
+}
+
+@media (max-width: 980px) {
+  .title-0 {
+    font-size: 60px;
+  }
+  .title-1 {
+    font-size: 60px;
   }
 }
